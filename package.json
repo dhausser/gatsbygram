@@ -4,6 +4,10 @@
   "description": "A simplified bare-bones starter for Gatsby",
   "version": "0.1.0",
   "license": "MIT",
+  "author": "Davy Hausser <davy.hausser@gmail.com>",
+  "engines": {
+    "node": ">=12.14.0"
+  },
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -15,12 +19,20 @@
   },
   "dependencies": {
     "gatsby": "^2.20.12",
+    "gatsby-plugin-react-helmet": "^3.2.1",
+    "isomorphic-fetch": "^2.2.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
   },
+  "homepage": "https://davyhausser.com",
+  "keywords": [
+    "gatsby",
+    "davyhausser"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
