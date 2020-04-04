@@ -25,7 +25,7 @@ function slimUpPosts(response) {
   return response.data.user.edge_owner_to_timeline_media.edges.map(edge => ({
     thumbnail: edge.node.thumbnail_src,
     url: `https://instagram.com/p/${edge.node.shortcode}`,
-    caption: edge.node.edge_media_to_caption.edges[0].node.text,
+    // caption: edge.node.edge_media_to_caption.edges[0].node.text,
     id: edge.node.id,
   }))
 }
