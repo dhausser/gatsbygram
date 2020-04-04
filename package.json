@@ -6,7 +6,7 @@
   "license": "MIT",
   "author": "Davy Hausser <davy.hausser@gmail.com>",
   "engines": {
-    "node": ">=12.14.0"
+    "node": ">=13.12.0"
   },
   "scripts": {
     "build": "gatsby build",
