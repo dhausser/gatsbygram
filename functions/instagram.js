@@ -15,7 +15,8 @@ async function getPosts() {
     return cache.posts
   }
   const data = await fetch(url).then(res => res.json())
-  const posts = slimUpPosts(data)
+  const posts = data
+  // const posts = slimUpPosts(data)
   cache.lastFetch = Date.now()
   cache.posts = posts
   return posts
