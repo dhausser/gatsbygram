@@ -1,8 +1,6 @@
 require("isomorphic-fetch")
 
-// const url = `https://www.instagram.com/graphql/query/?query_hash=e769aa130647d2354c40ea6a439bfc08&variables={"id":"519208","first":8}`
 const url = `https://www.instagram.com/graphql/query/?query_hash=e769aa130647d2354c40ea6a439bfc08&variables={"id":"21051932","first":8}`
-// const url = `https://www.instagram.com/graphql/query/?query_hash=6b838488258d7a4820e48d209ef79eb1&variables={"id":"21051932","first":8}`
 
 const cache = {
   lastFetch: 0,
@@ -25,9 +23,9 @@ async function getPosts() {
 
 function slimUpPosts(response) {
   return response.data.user.edge_owner_to_timeline_media.edges.map(edge => ({
-    thumbnail: edge.node.thumbnail_src,
-    url: `https://instagram.com/p/${edge.node.shortcode}`,
-    caption: edge.node.edge_media_to_caption.edges[0].node.text,
+    // thumbnail: edge.node.thumbnail_src,
+    // url: `https://instagram.com/p/${edge.node.shortcode}`,
+    // caption: edge.node.edge_media_to_caption.edges[0].node.text,
     id: edge.node.id,
   }))
 }
