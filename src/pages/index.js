@@ -40,7 +40,6 @@ export default function HomePage() {
             Instantly deploy your Next.js site to a public URL with ZEIT Now.
           </p>
         </a>
-
         <Instagram />
       </div>
     </div>

@@ -37,6 +37,8 @@ export default function Instagram() {
           Instant Grams
         </span>
       </h3>
+      {!gramz.length && <p>One sec, getting the gramz...</p>}
+      {gramz.length ? <h4>Posts</h4> : null}
       <InstaStyles>
         {gramz.map(gram => (
           <a href={gram.url} key={gram.id}>
