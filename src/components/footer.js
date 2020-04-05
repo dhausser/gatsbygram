@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { IoLogoGithub, IoLogoYoutube } from 'react-icons/io';
-import Instagram from './Instagram';
+// import Instagram from './Instagram';
 // import Twitter from './Twitter';
 // import Podcast from './Podcast';
 // import LatestCourse from './LatestCourse';
@@ -97,7 +97,7 @@ export default function Footer() {
           >
             <IoLogoGithub /> Github
           </a>
-          <p>&copy; Wes Bos 1999 — {new Date().getFullYear()}</p>
+          <p>&copy; Davy Hausser 2020 — {new Date().getFullYear()}</p>
         </div>
         {/* <footer>
           © {new Date().getFullYear()}, Built with

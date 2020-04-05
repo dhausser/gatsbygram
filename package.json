@@ -19,6 +19,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.28",
     "babel-plugin-styled-components": "^1.10.7",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
@@ -31,15 +32,20 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^3.0.0",
     "gatsby": "^2.20.12",
+    "gatsby-design-tokens": "^2.0.4",
+    "gatsby-image": "^2.3.1",
     "gatsby-plugin-layout": "^1.2.1",
     "gatsby-plugin-react-helmet": "^3.2.1",
     "gatsby-plugin-styled-components": "^3.2.1",
+    "hex2rgba": "^0.0.1",
     "isomorphic-fetch": "^2.2.1",
+    "qs": "^6.9.3",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "react-icons": "^3.9.0",
-    "styled-components": "^5.0.1"
+    "styled-components": "^5.0.1",
+    "theme-ui": "^0.3.1"
   },
   "devDependencies": {
     "prettier": "^1.19.1"

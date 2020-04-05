@@ -1,5 +1,6 @@
 import React from 'react';
-import Instagram from '../components/Instagram';
+import Instagram from '../components/instagram';
+import ShowcaseView from '../views/showcase';
 
 export default function HomePage() {
   return (
@@ -40,6 +41,7 @@ export default function HomePage() {
             Instantly deploy your Next.js site to a public URL with ZEIT Now.
           </p>
         </a>
+        <ShowcaseView />
         <Instagram />
       </div>
     </div>

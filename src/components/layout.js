@@ -1,17 +1,17 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import styled from 'styled-components';
-import LayoutStyles from '../assets/styles/LayoutStyles';
-import Footer from './Footer';
-import GlobalStyles from './styles/GlobalStyles';
+// import styled from 'styled-components';
+import LayoutStyles from '../assets/styles/layout-styles';
+import Footer from './footer';
+import GlobalStyles from './styles/global-styles';
 
 export default function Layout({
-  location,
-  title,
+  // location,
+  // title,
   children,
   className,
-  pageContext,
+  // pageContext,
 }) {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
