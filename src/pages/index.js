@@ -1,12 +1,11 @@
-import React from 'react';
-import Instagram from '../components/instagram';
-import ShowcaseView from '../views/showcase';
+import React from "react"
+import Instagram from "../components/instagram"
 
 export default function HomePage() {
   return (
     <div>
       <h1 className="title">
-        Welcome to <a href="https://davyhausser.com">Gatstagram!</a>
+        Welcome to <a href="https://davyhausser.com">Gatsbygram!</a>
       </h1>
 
       <p className="description">
@@ -41,9 +40,8 @@ export default function HomePage() {
             Instantly deploy your Next.js site to a public URL with ZEIT Now.
           </p>
         </a>
-        <ShowcaseView />
         <Instagram />
       </div>
     </div>
-  );
+  )
 }

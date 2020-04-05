@@ -1,13 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import { IoLogoGithub, IoLogoYoutube } from 'react-icons/io';
-// import Instagram from './Instagram';
-// import Twitter from './Twitter';
-// import Podcast from './Podcast';
-// import LatestCourse from './LatestCourse';
-// import blackGrit from './mdxComponents/blackgrit.png';
-// import whiteGrit from './mdxComponents/whitegrit.png';
-// import dirty from './styles/Dirty';
+import React from "react"
+import styled from "@emotion/styled"
+import { IoLogoGithub, IoLogoYoutube } from "react-icons/io"
 
 const FooterStyles = styled.footer`
   background-size: 500px;
@@ -61,10 +54,10 @@ const FooterStyles = styled.footer`
     color: white;
     display: inline-flex;
     align-items: center;
-    &[href*='youtube.com'] {
+    &[href*="youtube.com"] {
       background: red;
     }
-    &[href*='github.com'] {
+    &[href*="github.com"] {
       background: white;
       color: black;
     }
@@ -72,14 +65,13 @@ const FooterStyles = styled.footer`
       margin-right: 3px;
     }
   }
-`;
+`
 export default function Footer() {
   return (
     <FooterStyles>
       <div>
-        {/* <Instagram /> */}
         <div className="bottom">
-          I post videos on{' '}
+          I post videos on{` `}
           <a
             href="https://youtube.com/MrServyn?sub_confirmation=1"
             target="_blank"
@@ -87,8 +79,9 @@ export default function Footer() {
             className="socialLink"
           >
             <IoLogoYoutube /> YouTube
-          </a>{' '}
-          and code on{' '}
+          </a>
+          {` `}
+          and code on{` `}
           <a
             href="https://github.com/dhausser"
             target="_blank"
@@ -99,12 +92,7 @@ export default function Footer() {
           </a>
           <p>&copy; Davy Hausser 2020 — {new Date().getFullYear()}</p>
         </div>
-        {/* <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer> */}
       </div>
     </FooterStyles>
-  );
+  )
 }

@@ -1,10 +1,10 @@
-import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import Helmet from 'react-helmet';
-// import styled from 'styled-components';
-import LayoutStyles from '../assets/styles/layout-styles';
-import Footer from './footer';
-import GlobalStyles from './styles/global-styles';
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import Helmet from "react-helmet"
+import Footer from "./footer"
+import { Global } from "@emotion/core"
+import globalStyles from "./styles/global-styles"
+import LayoutStyles from "./styles/layout-styles"
 
 export default function Layout({
   // location,
@@ -22,16 +22,16 @@ export default function Layout({
         }
       }
     }
-  `);
+  `)
 
   return (
     <>
-      <GlobalStyles />
+      <Global styles={globalStyles} />
       <Helmet
-        htmlAttributes={{ lang: 'en' }}
+        htmlAttributes={{ lang: `en` }}
         meta={[
           {
-            name: 'description',
+            name: `description`,
             content: data.site.siteMetadata.description,
           },
         ]}
@@ -45,5 +45,5 @@ export default function Layout({
         </div>
       </LayoutStyles>
     </>
-  );
+  )
 }

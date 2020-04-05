@@ -2,17 +2,17 @@
 /* eslint-disable react/display-name */
 /* eslint-disable react/jsx-props-no-spreading */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import React from 'react';
-import { Link } from 'gatsby';
+import { jsx } from "theme-ui"
+import React from "react"
+import { Link } from "gatsby"
 
-import { buttonStyles } from '../utils/styles';
+import { buttonStyles } from "../utils/styles"
 
 const components = {
   link: Link,
   href: ({ children, ...rest }) => <a {...rest}>{children}</a>,
   button: ({ children, ...rest }) => <button {...rest}>{children}</button>,
-};
+}
 
 const Button = ({
   to,
@@ -25,20 +25,20 @@ const Button = ({
   variant,
   ...rest
 }) => {
-  const Tag = components[tag || `link`];
+  const Tag = components[tag || `link`]
 
   const props = {
     to: !tag ? to : undefined,
     href: tag === `href` ? to : undefined,
     ...rest,
-  };
+  }
 
   const trackingOnClick = e => {
     if (typeof props.onClick === `function`) {
-      props.onClick(e);
+      props.onClick(e)
     }
 
-    let redirect = true;
+    let redirect = true
 
     // Slightly modified logic from the gatsby-plugin-google-analytics
     // But this one should work with `Link` component as well
@@ -50,11 +50,11 @@ const Button = ({
       e.shiftKey ||
       e.defaultPrevented
     ) {
-      redirect = false;
+      redirect = false
     }
 
     if (props.target && props.target.toLowerCase() !== `_self`) {
-      redirect = false;
+      redirect = false
     }
 
     if (tracking && window.ga) {
@@ -63,16 +63,16 @@ const Button = ({
         eventAction: `click`,
         eventLabel: `${tracking} - ${props.to || props.href}`,
         transport: redirect ? `beacon` : ``,
-      });
+      })
     }
-  };
+  }
 
   return (
     <Tag
       {...props}
       onClick={trackingOnClick}
       sx={{
-        '&&': {
+        "&&": {
           ...buttonStyles().default,
           ...(secondary && buttonStyles().secondary),
           variant: `buttons.${variant}`,
@@ -83,7 +83,7 @@ const Button = ({
       {children}
       {icon && <React.Fragment>{icon}</React.Fragment>}
     </Tag>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button

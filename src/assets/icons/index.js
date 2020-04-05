@@ -1,3 +1,3 @@
-import ShowcaseIcon from './showcase.svg';
+import ShowcaseIcon from "./showcase.svg"
 
-export { ShowcaseIcon };
+export { ShowcaseIcon }

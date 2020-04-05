@@ -6,18 +6,26 @@
 
 module.exports = {
   siteMetadata: {
-    title: 'Davy Hausser',
-    description: 'The Personal Website of Davy Hausser',
-    author: 'Davy Hausser',
+    title: `Davy Hausser`,
+    description: `The Personal Website of Davy Hausser`,
+    author: `Davy Hausser`,
   },
   plugins: [
-    `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-emotion`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-layout`,
       options: {
         component: require.resolve(`./src/components/layout`),
       },
     },
+    {
+      resolve: `gatsby-transformer-screenshot`,
+      options: {
+        nodeTypes: [`StartersYaml`],
+      },
+    },
   ],
-};
+}

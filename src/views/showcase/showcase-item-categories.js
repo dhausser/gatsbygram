@@ -1,25 +1,23 @@
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable jsx-a11y/anchor-has-content */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Fragment } from 'react';
-import qs from 'qs';
-import { Link } from 'gatsby';
+import { jsx } from "theme-ui"
+import { Fragment } from "react"
+import qs from "qs"
+import { Link } from "gatsby"
 
-const ScrollToLink = ({ to, ...rest }) => <a href={to} {...rest} />;
+const ScrollToLink = ({ to, ...rest }) => <a href={to} {...rest} />
 
 const ShowcaseItemCategories = ({ categories, onCategoryClick }) => {
-  const LinkComponent = onCategoryClick ? ScrollToLink : Link;
+  const LinkComponent = onCategoryClick ? ScrollToLink : Link
 
   return categories.map((c, i) => (
     <Fragment key={c}>
       <LinkComponent
         sx={{
-          '&&': {
+          "&&": {
             color: `textMuted`,
             fontWeight: `body`,
             borderBottom: `none`,
-            '&:hover': {
+            "&:hover": {
               color: `link.hoverColor`,
             },
           },
@@ -28,9 +26,9 @@ const ShowcaseItemCategories = ({ categories, onCategoryClick }) => {
           filters: [c],
         })}`}
         onClick={e => {
-          e.preventDefault();
+          e.preventDefault()
           if (onCategoryClick) {
-            onCategoryClick(c);
+            onCategoryClick(c)
           }
         }}
         category={c}
@@ -39,7 +37,7 @@ const ShowcaseItemCategories = ({ categories, onCategoryClick }) => {
       </LinkComponent>
       {i === categories.length - 1 ? `` : `, `}
     </Fragment>
-  ));
-};
+  ))
+}
 
-export default ShowcaseItemCategories;
+export default ShowcaseItemCategories

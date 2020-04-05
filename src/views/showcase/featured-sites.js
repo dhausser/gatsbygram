@@ -1,21 +1,21 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-danger */
 /** @jsx jsx */
-import { jsx, useColorMode } from 'theme-ui';
-import Img from 'gatsby-image';
-import hex2rgba from 'hex2rgba';
+import { jsx, useColorMode } from "theme-ui"
+import Img from "gatsby-image"
+import hex2rgba from "hex2rgba"
 
 import {
   mediaQueries,
   colors,
-} from 'gatsby-design-tokens/dist/theme-gatsbyjs-org';
-import { MdArrowForward as ArrowForwardIcon } from 'react-icons/md';
-import { Link } from 'gatsby';
-import { screenshot, screenshotHover, withTitleHover } from '../shared/styles';
-import ShowcaseItemCategories from './showcase-item-categories';
-import { ShowcaseIcon } from '../../assets/icons';
-import { svgStyles } from '../../utils/styles';
-import Button from '../../components/button';
+} from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
+import { MdArrowForward as ArrowForwardIcon } from "react-icons/md"
+import { Link } from "gatsby"
+import { screenshot, screenshotHover, withTitleHover } from "../shared/styles"
+import ShowcaseItemCategories from "./showcase-item-categories"
+import { ShowcaseIcon } from "../../assets/icons"
+import { svgStyles } from "../../utils/styles"
+import Button from "../../components/button"
 
 const featuredSitesCard = {
   display: `flex`,
@@ -32,37 +32,40 @@ const featuredSitesCard = {
   [mediaQueries.xxl]: {
     width: 400,
   },
-};
+}
 
-const GradientOverlay = () => {
-  const [colorMode] = useColorMode();
-  const gradientColor =
-    colorMode === `dark` ? colors.modes.dark.background : colors.background;
+// const GradientOverlay = () => {
+//   const [colorMode] = useColorMode()
+//   const gradientColor =
+//     colorMode === `dark` ? colors.modes.dark.background : colors.background
 
-  return (
-    <div
-      sx={{
-        background: t =>
-          `linear-gradient(90deg, ${hex2rgba(gradientColor, 0)} 0%, ${hex2rgba(
-            gradientColor,
-            1
-          )} 100%)`,
-        bottom: t => t.space[6],
-        pointerEvents: `none`,
-        position: `absolute`,
-        right: t => `-${t.space[6]}`,
-        top: 0,
-        width: 60,
-      }}
-    />
-  );
-};
+//   return (
+//     <div
+//       sx={{
+//         background: t =>
+//           `linear-gradient(90deg, ${hex2rgba(gradientColor, 0)} 0%, ${hex2rgba(
+//             gradientColor,
+//             1
+//           )} 100%)`,
+//         bottom: t => t.space[6],
+//         pointerEvents: `none`,
+//         position: `absolute`,
+//         right: t => `-${t.space[6]}`,
+//         top: 0,
+//         width: 60,
+//       }}
+//     />
+//   )
+// }
 
-const FeaturedSites = ({ featured, setFilters }) => {
+// const FeaturedSites = ({ featured, setFilters }) => {
+const FeaturedSites = ({ setFilters }) => {
+  const featured = []
+
   const setFilterToFeatured = e => {
-    e.preventDefault();
-    setFilters(`Featured`);
-  };
+    e.preventDefault()
+    setFilters(`Featured`)
+  }
 
   return (
     <section
@@ -105,10 +108,10 @@ const FeaturedSites = ({ featured, setFilters }) => {
             [mediaQueries.sm]: {
               display: `block`,
             },
-            '&&': {
+            "&&": {
               borderBottom: 0,
               cursor: `pointer`,
-              '&:hover': {
+              "&:hover": {
                 color: `link.hoverColor`,
               },
             },
@@ -154,12 +157,12 @@ const FeaturedSites = ({ featured, setFilters }) => {
       <div css={{ position: `relative` }}>
         <div
           sx={{
-            borderBottom: t => `1px solid ${t.colors.ui.border}`,
+            // borderBottom: t => `1px solid ${t.colors.ui.border}`,
             display: `flex`,
             flexShrink: 0,
-            margin: t => `0 -${t.space[6]}`,
+            // margin: t => `0 -${t.space[6]}`,
             overflowX: `scroll`,
-            padding: t => `${t.space[6]} ${t.space[6]} 0`,
+            // padding: t => `${t.space[6]} ${t.space[6]} 0`,
           }}
         >
           {featured.slice(0, 9).map(node => (
@@ -172,7 +175,7 @@ const FeaturedSites = ({ featured, setFilters }) => {
             >
               <Link
                 sx={{
-                  '&&': {
+                  "&&": {
                     borderBottom: `none`,
                     color: `heading`,
                     fontFamily: `heading`,
@@ -180,7 +183,7 @@ const FeaturedSites = ({ featured, setFilters }) => {
                     fontWeight: `bold`,
                     transition: t =>
                       `box-shadow ${t.transition.speed.slow} ${t.transition.curve.default}, transform .3s ${t.transition.curve.default}`,
-                    '&:hover': { ...screenshotHover },
+                    "&:hover": { ...screenshotHover },
                   },
                 }}
                 to={node.fields.slug}
@@ -231,10 +234,10 @@ const FeaturedSites = ({ featured, setFilters }) => {
                 borderRadius: 1,
                 marginRight: t => `${t.space[6]} !important`,
                 textAlign: `center`,
-                '&&': {
+                "&&": {
                   border: 0,
                   transition: `default`,
-                  '&:hover': {
+                  "&:hover": {
                     transform: t => `translateY(-${t.space[1]})`,
                     boxShadow: `overlay`,
                   },
@@ -271,7 +274,7 @@ const FeaturedSites = ({ featured, setFilters }) => {
                       [mediaQueries.xl]: {
                         height: 72,
                       },
-                      '& svg': {
+                      "& svg": {
                         height: `100%`,
                         ...svgStyles.active,
                       },
@@ -285,10 +288,10 @@ const FeaturedSites = ({ featured, setFilters }) => {
             </a>
           </div>
         </div>
-        <GradientOverlay />
+        {/* <GradientOverlay /> */}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default FeaturedSites;
+export default FeaturedSites

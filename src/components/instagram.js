@@ -1,27 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
-import { FaInstagram } from 'react-icons/fa';
+import React, { useState, useEffect } from "react"
+import styled from "@emotion/styled"
+import { FaInstagram } from "react-icons/fa"
 
 const InstaStyles = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
-`;
+`
 
 function useInstagram() {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState([])
   useEffect(() => {
-    fetch('/.netlify/functions/instagram')
+    fetch(`/.netlify/functions/instagram`)
       .then(res => res.json())
       .then(data => {
-        setPosts(data);
-      });
-  }, []);
-  return posts;
+        setPosts(data)
+      })
+  }, [])
+  return posts
 }
 
 export default function Instagram() {
-  const gramz = useInstagram();
+  const gramz = useInstagram()
   return (
     <div>
       <h3>
@@ -32,7 +32,7 @@ export default function Instagram() {
             rel="noopener noreferrer"
           >
             <FaInstagram style={{ strokeWidth: 15 }} />
-            @davy_hausser{' '}
+            @davy_hausser{` `}
           </a>
           Instant Grams
         </span>
@@ -47,5 +47,5 @@ export default function Instagram() {
         ))}
       </InstaStyles>
     </div>
-  );
+  )
 }

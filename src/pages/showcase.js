@@ -1,18 +1,47 @@
-import React from 'react';
-// import { graphql } from 'gatsby';
+import React from "react"
+import { graphql } from "gatsby"
 
-import ShowcaseView from '../views/showcase';
+import ShowcaseView from "../views/showcase"
 
-const ShowcasePage = ({ data, location }) => (
-  <ShowcaseView data={data} location={location} />
-);
+const ShowcasePage = ({ data, location }) => {
+  console.log(data)
+  // return <p>ShowcasePage</p>
+  return <ShowcaseView data={data} location={location} />
+}
 
-export default ShowcasePage;
+export default ShowcasePage
 
-/**
- * TODO: Fetch featured sites data
- */
-// export const showcaseQuery = graphql`
+export const showcaseQuery = graphql`
+  query {
+    featured: allSitesYaml(
+      filter: {
+        featured: { eq: true }
+        fields: { hasScreenshot: { eq: true } }
+      }
+    ) {
+      nodes {
+        id
+        title
+        categories
+        built_by
+        fields {
+          slug
+        }
+      }
+    }
+  }
+`
+
+// childScreenshot {
+//   screenshotFile {
+//     childImageSharp {
+//       fluid(maxWidth: 512) {
+//         ...GatsbyImageSharpFluid_noBase64
+//       }
+//     }
+//   }
+// }
+
 //   query {
 //     featured: allSitesYaml(
 //       filter: {
@@ -68,4 +97,4 @@ export default ShowcasePage;
 //       }
 //     }
 //   }
-// `;
+// `
