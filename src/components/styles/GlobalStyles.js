@@ -1,3 +1,6 @@
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyles = createGlobalStyle`
 html,
 body {
   padding: 0;
@@ -133,3 +136,5 @@ code {
     flex-direction: column;
   }
 }
+`;
+export default GlobalStyles;

@@ -5,5 +5,19 @@
  */
 
 module.exports = {
-  plugins: [`gatsby-plugin-react-helmet`],
-}
+  siteMetadata: {
+    title: 'Davy Hausser',
+    description: 'The Personal Website of Davy Hausser',
+    author: 'Davy Hausser',
+  },
+  plugins: [
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/Layout`),
+      },
+    },
+  ],
+};
