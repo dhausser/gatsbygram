@@ -49,7 +49,7 @@ const ShowcaseView = ({ data }) => {
       <h2>Featured Sites</h2>
       <FeaturedSites
         setFilters={handleSetFilters}
-        featured={data.featured.nodes}
+        featured={data.allProjectsJson.edges}
       />
       <div id="showcase" css={{ height: 0 }} ref={showcase} />
     </>

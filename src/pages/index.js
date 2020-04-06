@@ -1,7 +1,8 @@
 import React from "react"
+import ProjectPreview from "../components/project-preview"
 import Instagram from "../components/instagram"
 
-export default function HomePage() {
+export default function HomePage({ data }) {
   return (
     <div>
       <h1 className="title">
@@ -13,6 +14,17 @@ export default function HomePage() {
       </p>
 
       <div className="grid">
+        {data.allProjectsJson.edges.map(({ node: project }, index) => (
+          <div key={`preview-${project.slug.current}`} className="card">
+            <ProjectPreview
+              title={project.title}
+              description={project.description}
+              imageData={project.image.childImageSharp.fluid}
+              slug={project.slug}
+              index={index}
+            />
+          </div>
+        ))}
         <a href="https://nextjs.org/docs" className="card">
           <h3>Documentation &rarr;</h3>
           <p>Find in-depth information about Next.js features and API.</p>
@@ -45,3 +57,24 @@ export default function HomePage() {
     </div>
   )
 }
+
+export const showcaseQuery = graphql`
+  query {
+    allProjectsJson {
+      edges {
+        node {
+          title
+          description
+          slug
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`

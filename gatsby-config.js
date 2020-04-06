@@ -13,8 +13,11 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-emotion`,
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-transformer-json`,
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-layout`,
       options: {
@@ -22,9 +25,24 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-screenshot`,
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        nodeTypes: [`StartersYaml`],
+        name: `DavyHausserPortfolio`,
+        short_name: `DavyHausserPortfolio`,
+        start_url: `/`,
+        background_color: `#6b37bf`,
+        theme_color: `#6b37bf`,
+        // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
+        // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
+        display: `standalone`,
+        icon: `src/assets/icons/showcase.svg`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `project`,
+        path: `${__dirname}/data/`,
       },
     },
   ],

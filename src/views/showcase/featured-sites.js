@@ -59,8 +59,8 @@ const featuredSitesCard = {
 // }
 
 // const FeaturedSites = ({ featured, setFilters }) => {
-const FeaturedSites = ({ setFilters }) => {
-  const featured = []
+const FeaturedSites = ({ setFilters, featured }) => {
+  console.log(featured)
 
   const setFilterToFeatured = e => {
     e.preventDefault()
@@ -186,7 +186,8 @@ const FeaturedSites = ({ setFilters }) => {
                     "&:hover": { ...screenshotHover },
                   },
                 }}
-                to={node.fields.slug}
+                to="/"
+                // to={node.fields.slug}
                 state={{ isModal: true }}
               >
                 {node.childScreenshot && (
