@@ -3,8 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Helmet from "react-helmet"
 import Footer from "./footer"
 import { Global } from "@emotion/core"
-import globalStyles from "./styles/global-styles"
-import LayoutStyles from "./styles/layout-styles"
+import globalStyles, { layoutStyles, container } from "./styles/global-styles"
 
 export default function Layout({
   // location,
@@ -38,12 +37,12 @@ export default function Layout({
         title={data.site.siteMetadata.title}
       />
 
-      <LayoutStyles className={className}>
-        <div className="container">
+      <div css={layoutStyles}>
+        <div className="container" css={container}>
           {children}
           <Footer />
         </div>
-      </LayoutStyles>
+      </div>
     </>
   )
 }
