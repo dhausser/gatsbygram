@@ -1,4 +1,4 @@
-const fetch = require(`node-fetch`)
+const fetch = require(`isomorphic-unfetch`)
 
 const url = `https://www.instagram.com/graphql/query/?query_hash=e769aa130647d2354c40ea6a439bfc08&variables={"id":"21051932","first":4}`
 
@@ -33,6 +33,7 @@ async function getPosts() {
 
 exports.handler = async function (event, context, callback) {
   const posts = await getPosts()
+  console.log(posts)
   callback(null, {
     statusCode: 200,
     headers: {

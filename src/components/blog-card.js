@@ -1,7 +1,7 @@
 import React from "react"
 import { Badge, Box, Image } from "@chakra-ui/core"
 
-export default function Card() {
+export default function Card({ title, date, excerpt }) {
   const property = {
     imageUrl: `https://bit.ly/2Z4KKcF`,
     imageAlt: `Rear view of modern home with pool`,
@@ -30,7 +30,7 @@ export default function Card() {
             textTransform="uppercase"
             ml="2"
           >
-            {property.beds} beds &bull; {property.baths} baths
+            5 min read
           </Box>
         </Box>
 
@@ -44,13 +44,6 @@ export default function Card() {
           {property.title}
         </Box>
 
-        <Box>
-          {property.formattedPrice}
-          <Box as="span" color="gray.600" fontSize="sm">
-            / wk
-          </Box>
-        </Box>
-
         <Box d="flex" mt="2" alignItems="center">
           {/* {Array(5)
             .fill(``)
@@ -60,8 +53,8 @@ export default function Card() {
                 color={i < property.rating ? `teal.500` : `gray.300`}
               />
             ))} */}
-          <Box as="span" ml="2" color="gray.600" fontSize="sm">
-            {property.reviewCount} reviews
+          <Box as="span" color="gray.600" fontSize="sm" isTruncated>
+            {excerpt}
           </Box>
         </Box>
       </Box>

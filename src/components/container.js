@@ -1,6 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
-import { useColorMode, Button, Flex, Box, IconButton } from "@chakra-ui/core"
+import {
+  useColorMode,
+  Stack,
+  Button,
+  Flex,
+  Box,
+  IconButton,
+} from "@chakra-ui/core"
 import styled from "@emotion/styled"
 
 import Footer from "./footer"
@@ -16,12 +23,18 @@ const StickyNav = styled(Flex)`
 const Container = ({ children }) => {
   const { colorMode, toggleColorMode } = useColorMode()
   return (
-    <>
+    <Stack
+      maxWidth="1200px"
+      m="0 auto 4rem auto"
+      as="main"
+      spacing={8}
+      justifyContent="center"
+      alignItems="flex-start"
+    >
       <StickyNav
         flexDirection="row"
         justifyContent="space-between"
         alignItems="center"
-        maxWidth="900px"
         width="100%"
         as="nav"
         p={8}
@@ -35,9 +48,9 @@ const Container = ({ children }) => {
           onClick={toggleColorMode}
         />
         <Box>
-          <Link to="/dashboard">
+          <Link to="/">
             <Button as="a" variant="ghost" p={[1, 4]}>
-              Dashboard
+              Showcase
             </Button>
           </Link>
           <Link to="/blog">
@@ -45,14 +58,14 @@ const Container = ({ children }) => {
               Blog
             </Button>
           </Link>
+          <Link to="/store">
+            <Button as="a" variant="ghost" p={[1, 4]}>
+              Store
+            </Button>
+          </Link>
           <Link to="/about">
             <Button as="a" variant="ghost" p={[1, 4]}>
               About
-            </Button>
-          </Link>
-          <Link to="/">
-            <Button as="a" variant="ghost" p={[1, 4]}>
-              Home
             </Button>
           </Link>
         </Box>
@@ -61,7 +74,7 @@ const Container = ({ children }) => {
         {children}
         <Footer />
       </Flex>
-    </>
+    </Stack>
   )
 }
 

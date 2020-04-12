@@ -4,6 +4,7 @@ import Helmet from "react-helmet"
 import { ThemeProvider, CSSReset, ColorModeProvider } from "@chakra-ui/core"
 import theme from "./styles/theme"
 import Container from "../components/container"
+import Messenger from "../components/messenger"
 
 export default function Layout({ children }) {
   const data = useStaticQuery(graphql`
@@ -31,7 +32,9 @@ export default function Layout({ children }) {
           ]}
           title={data.site.siteMetadata.title}
         />
-        <Container>{children}</Container>
+        <Messenger>
+          <Container>{children}</Container>
+        </Messenger>
       </ColorModeProvider>
     </ThemeProvider>
   )

@@ -33,6 +33,7 @@
     "gatsby-transformer-remark": "^2.7.1",
     "gatsby-transformer-sharp": "^2.4.4",
     "husky": "^4.2.3",
+    "isomorphic-unfetch": "^3.0.0",
     "lint-staged": "^10.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
