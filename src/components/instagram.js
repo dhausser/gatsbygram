@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react"
-import Card from "./card"
-import { Box } from "@chakra-ui/core"
+import { useState, useEffect } from "react"
 
 function useInstagram() {
   const [posts, setPosts] = useState([])
@@ -16,13 +14,5 @@ function useInstagram() {
 
 export default function Instagram() {
   const gramz = useInstagram()
-  return (
-    <Box>
-      {gramz.map(gram => (
-        <a href={gram.url} key={gram.id}>
-          <Card imageUrl={gram.thumbnail} imageAlt={gram.caption} />
-        </a>
-      ))}
-    </Box>
-  )
+  return Array.isArray(gramz) ? gramz : []
 }
