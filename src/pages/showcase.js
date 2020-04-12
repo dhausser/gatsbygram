@@ -1,19 +1,26 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { css } from "@emotion/core"
 
-import ShowcaseView from "../views/showcase"
+import { Flex, Stack } from "@chakra-ui/core"
+import Container from "../components/container"
 
 const ShowcasePage = ({ data, location }) => {
   console.log(data)
   return (
-    <div
-      styles={css`
-        display: flex;
-      `}
-    >
-      <ShowcaseView data={data} location={location} />
-    </div>
+    <Container>
+      <Stack
+        as="main"
+        spacing={8}
+        justifyContent="center"
+        alignItems="flex-start"
+        m="0 auto 4rem auto"
+        maxWidth="700px"
+      >
+        <Flex>
+          <h1>Showcase</h1>
+        </Flex>
+      </Stack>
+    </Container>
   )
 }
 

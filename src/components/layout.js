@@ -1,17 +1,51 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Helmet from "react-helmet"
-import Footer from "./footer"
-import { Global } from "@emotion/core"
-import globalStyles, { layoutStyles, container } from "./styles/global-styles"
+import { Global, css } from "@emotion/core"
+import {
+  ThemeProvider,
+  CSSReset,
+  ColorModeProvider,
+  useColorMode,
+} from "@chakra-ui/core"
 
-export default function Layout({
-  // location,
-  // title,
-  children,
-  className,
-  // pageContext,
-}) {
+import theme from "./styles/theme"
+import { prismLightTheme, prismDarkTheme } from "./styles/prism"
+
+const GlobalStyle = ({ children }) => {
+  const { colorMode } = useColorMode()
+
+  return (
+    <>
+      <CSSReset />
+      <Global
+        styles={css`
+          ${colorMode === `light` ? prismLightTheme : prismDarkTheme};
+
+          ::selection {
+            background-color: #47a3f3;
+            color: #fefefe;
+          }
+
+          html {
+            min-width: 360px;
+            scroll-behavior: smooth;
+          }
+
+          #__next {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: ${colorMode === `light` ? `white` : `#171923`};
+          }
+        `}
+      />
+      {children}
+    </>
+  )
+}
+
+export default function Layout({ children }) {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -24,25 +58,22 @@ export default function Layout({
   `)
 
   return (
-    <>
-      <Global styles={globalStyles} />
-      <Helmet
-        htmlAttributes={{ lang: `en` }}
-        meta={[
-          {
-            name: `description`,
-            content: data.site.siteMetadata.description,
-          },
-        ]}
-        title={data.site.siteMetadata.title}
-      />
-
-      <div css={layoutStyles}>
-        <div className="container" css={container}>
+    <ThemeProvider theme={theme}>
+      <ColorModeProvider value="light">
+        <GlobalStyle>
+          <Helmet
+            htmlAttributes={{ lang: `en` }}
+            meta={[
+              {
+                name: `description`,
+                content: data.site.siteMetadata.description,
+              },
+            ]}
+            title={data.site.siteMetadata.title}
+          />
           {children}
-          <Footer />
-        </div>
-      </div>
-    </>
+        </GlobalStyle>
+      </ColorModeProvider>
+    </ThemeProvider>
   )
 }

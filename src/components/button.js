@@ -2,7 +2,7 @@
 /* eslint-disable react/display-name */
 /* eslint-disable react/jsx-props-no-spreading */
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx } from "@emotion/core"
 import React from "react"
 import { Link } from "gatsby"
 
