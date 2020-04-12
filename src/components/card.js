@@ -1,7 +1,7 @@
 import React from "react"
 import { Badge, Box, Image } from "@chakra-ui/core"
 
-export default function Card() {
+export default function Card({ imageUrl, imageAlt }) {
   const property = {
     imageUrl: `https://bit.ly/2Z4KKcF`,
     imageAlt: `Rear view of modern home with pool`,
@@ -15,7 +15,10 @@ export default function Card() {
 
   return (
     <Box maxW="sm" borderWidth="1px" rounded="lg" overflow="hidden">
-      <Image src={property.imageUrl} alt={property.imageAlt} />
+      <Image
+        src={property.imageUrl || imageUrl}
+        alt={property.imageAlt || imageAlt}
+      />
 
       <Box p="6">
         <Box d="flex" alignItems="baseline">

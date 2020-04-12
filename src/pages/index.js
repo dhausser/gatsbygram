@@ -35,17 +35,17 @@ export default function Index({ data }) {
             url={project.url}
           />
         ))}
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
         <Instagram />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
       </SimpleGrid>
     </Flex>
   )

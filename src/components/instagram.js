@@ -43,7 +43,6 @@ export default function Instagram() {
       <InstaStyles>
         {gramz.map(gram => (
           <a href={gram.url} key={gram.id}>
-            {/* <img src={gram.thumbnail} alt={gram.caption} /> */}
             <Card imageUrl={gram.thumbnail} imageAlt={gram.caption} />
           </a>
         ))}
