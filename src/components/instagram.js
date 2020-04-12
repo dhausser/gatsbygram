@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import styled from "@emotion/styled"
 import { FaInstagram } from "react-icons/fa"
+import Card from "./card"
 
 const InstaStyles = styled.div`
   display: grid;
@@ -42,7 +43,8 @@ export default function Instagram() {
       <InstaStyles>
         {gramz.map(gram => (
           <a href={gram.url} key={gram.id}>
-            <img src={gram.thumbnail} alt={gram.caption} />
+            {/* <img src={gram.thumbnail} alt={gram.caption} /> */}
+            <Card imageUrl={gram.thumbnail} imageAlt={gram.caption} />
           </a>
         ))}
       </InstaStyles>

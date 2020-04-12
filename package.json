@@ -83,9 +83,9 @@
   },
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "dev": "netlify dev",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
+    "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "eslint .",

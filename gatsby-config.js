@@ -11,7 +11,6 @@ module.exports = {
     author: `Davy Hausser`,
   },
   plugins: [
-    `gatsby-plugin-chakra-ui`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-sharp`,
@@ -19,6 +18,13 @@ module.exports = {
     `gatsby-transformer-json`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-chakra-ui`,
+      options: {
+        isResettingCSS: false, // optional, default to true
+        isUsingColorMode: false, // optional, default to true
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

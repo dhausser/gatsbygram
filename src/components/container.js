@@ -15,20 +15,6 @@ const StickyNav = styled(Flex)`
 
 const Container = ({ children }) => {
   const { colorMode, toggleColorMode } = useColorMode()
-
-  const bgColor = {
-    light: `white`,
-    dark: `gray.900`,
-  }
-  const primarytextColor = {
-    light: `black`,
-    dark: `white`,
-  }
-  const navBgColor = {
-    light: `rgba(255, 255, 255, 0.8)`,
-    dark: `rgba(23, 25, 35, 0.8)`,
-  }
-
   return (
     <>
       <StickyNav
@@ -37,7 +23,6 @@ const Container = ({ children }) => {
         alignItems="center"
         maxWidth="900px"
         width="100%"
-        bg={navBgColor[colorMode]}
         as="nav"
         p={8}
         mt={[0, 8]}
@@ -72,14 +57,7 @@ const Container = ({ children }) => {
           </Link>
         </Box>
       </StickyNav>
-      <Flex
-        as="main"
-        justifyContent="center"
-        flexDirection="column"
-        bg={bgColor[colorMode]}
-        color={primarytextColor[colorMode]}
-        px={8}
-      >
+      <Flex as="main" justifyContent="center" flexDirection="column" px={8}>
         {children}
         <Footer />
       </Flex>
